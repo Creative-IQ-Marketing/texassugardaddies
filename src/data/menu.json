@@ -1,0 +1,65 @@
+{
+  "title": "Texas Sugar Daddies Menu",
+  "subtitle": "Sweet Treats + Catering – From breakfast boxes to buffet service, we've got your Texas-sized appetite covered",
+  "categories": [
+    {
+      "id": "breakfast-boxes",
+      "name": "Breakfast Boxes",
+      "items": [
+        {
+          "name": "Breakfast Box",
+          "price": "$11.50 per person",
+          "description": "Packaged individually with 3oz of each item: Scrambled Eggs, Refried Beans, Breakfast Potatoes with Two Tortillas. Choice of Bacon, Ham, or Country Sausage.",
+          "badge": "Individual Packaging",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Yogurt + Fruit Breakfast Box",
+          "price": "$8.75 per person",
+          "description": "Packaged individually with Vanilla Yogurt, Granola, Seasonal Fresh Fruit, and a Boiled Egg.",
+          "badge": "Healthy Option",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Pastry Box",
+          "price": "$7.75 per person",
+          "description": "Chef's Choice Variety – 2 per person and Seasonal Fresh Fruit. Includes Mini Plates, Serving Tongs, and Napkins.",
+          "badge": "Sweet Start",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Breakfast Taco Box - Individually Wrapped",
+          "price": "$2.50+ each",
+          "description": "Bacon and Egg: $2.75 | Sausage and Egg: $2.75 | Bean and Cheese: $2.50 | Potato and Egg: $2.50",
+          "badge": "A La Carte",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
+    },
+    {
+      "id": "buffet-breakfast",
+      "name": "Buffet Breakfast",
+      "items": []
+    },
+    {
+      "id": "hot-meals",
+      "name": "Hot Meals To Go",
+      "items": []
+    },
+    {
+      "id": "boxed-lunches",
+      "name": "Boxed Lunches",
+      "items": []
+    },
+    {
+      "id": "sweet-treats",
+      "name": "Sweet Treats",
+      "items": []
+    },
+    {
+      "id": "venue-buffet",
+      "name": "Venue Buffet",
+      "items": []
+    }
+  ]
+}
