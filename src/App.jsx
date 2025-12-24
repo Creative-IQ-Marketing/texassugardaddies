@@ -4,7 +4,7 @@ import Intro from "./components/Intro.jsx";
 import Services from "./components/Services.jsx";
 import Schedules from "./components/Schedules.jsx";
 import RestaurantMenu from "./components/Menu.jsx";
-import Footer from "./components/footer.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
