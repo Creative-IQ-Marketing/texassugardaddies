@@ -1,10 +1,10 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Intro from "./components/Intro";
-import Services from "./components/Services";
-import Schedules from "./components/Schedules";
-import RestaurantMenu from "./components/Menu";
-import Footer from "./components/footer";
+import Header from "./components/Header.jsx";
+import Hero from "./components/Hero.jsx";
+import Intro from "./components/Intro.jsx";
+import Services from "./components/Services.jsx";
+import Schedules from "./components/Schedules.jsx";
+import RestaurantMenu from "./components/Menu.jsx";
+import Footer from "./components/footer.jsx";
 
 function App() {
   return (
