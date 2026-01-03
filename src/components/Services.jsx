@@ -4,6 +4,7 @@ import cookiesImg from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
 import cateringImg from "../assets/extras/imgi_5_68c0e4f632f3399471194aff.jpg";
 import venueImg from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
 import servicesData from "../data/services.json";
+import { useScrollToElement } from "../hooks/useScrollToElement";
 
 const imageMap = {
   "cake.jpg": cakeImg,
@@ -13,35 +14,40 @@ const imageMap = {
 };
 
 function ServiceCard({ title, desc, img, btn, link, index }) {
-  const isEven = index % 2 === 0;
   const imageSrc = imageMap[img];
+  const { scrollToElement } = useScrollToElement();
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    scrollToElement(link || "contact");
+  };
 
   return (
-    <div
-      className={`flex flex-col ${
-        isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-      } items-stretch min-h-96 lg:min-h-screen bg-white transition-all duration-300`}
-    >
-      <div className="w-full lg:w-1/2 overflow-hidden bg-gray-100">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
-        />
-      </div>
+    <div className="group">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
+        <div className={`${index % 2 === 1 ? "md:order-2" : ""}`}>
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
+            <img
+              src={imageSrc}
+              alt={title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
 
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 lg:p-20 bg-white">
-        <div className="space-y-8">
-          <h3 className="text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            {title}
-          </h3>
-          <p className="text-gray-600 text-lg leading-relaxed">{desc}</p>
-          <a
-            href={link}
-            className="inline-block px-12 py-5 bg-blue-600 text-white font-bold text-sm tracking-wider rounded-xl hover:bg-blue-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg w-fit"
-          >
-            {btn}
-          </a>
+        <div className={`${index % 2 === 1 ? "md:order-1" : ""}`}>
+          <div className="space-y-5">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+              {title}
+            </h3>
+            <p className="text-gray-600 text-base leading-relaxed">{desc}</p>
+            <button
+              onClick={handleButtonClick}
+              className="inline-block px-8 py-3 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 border-none cursor-pointer"
+            >
+              {btn}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -50,30 +56,23 @@ function ServiceCard({ title, desc, img, btn, link, index }) {
 
 export default function Services() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 mb-24">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+    <section className="py-20 bg-white" data-section="services">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {servicesData.title}
           </h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600">{servicesData.subtitle}</p>
+          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            {servicesData.subtitle}
+          </p>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto">
-        {servicesData.services.map((s, index) => (
-          <div
-            key={s.id}
-            className={
-              index < servicesData.services.length - 1
-                ? "border-b border-gray-200"
-                : ""
-            }
-          >
-            <ServiceCard {...s} index={index} />
-          </div>
-        ))}
+        <div className="space-y-12">
+          {servicesData.services.map((s, index) => (
+            <ServiceCard key={s.id} {...s} index={index} />
+          ))}
+        </div>
       </div>
     </section>
   );

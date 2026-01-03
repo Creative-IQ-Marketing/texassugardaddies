@@ -12,7 +12,7 @@ export default function RestaurantMenu() {
     menuData.categories.find((cat) => cat.id === activeCategory)?.items || [];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" data-section="menu">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 space-y-3">
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">

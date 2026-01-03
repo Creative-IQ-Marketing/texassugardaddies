@@ -2,6 +2,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaUtensils } from "react-icons/fa";
+import { useScrollToElement } from "../hooks/useScrollToElement";
 
 const SCHEDULES = [
   {
@@ -16,7 +17,7 @@ const SCHEDULES = [
       { text: "FREE delivery!", bold: true, color: "text-yellow-400" },
     ],
     variant: "active",
-    link: "#menu",
+    link: "menu",
   },
   {
     id: "coming",
@@ -34,6 +35,13 @@ const SCHEDULES = [
 ];
 
 function ScheduleCard({ s, index = 0 }) {
+  const { scrollToElement } = useScrollToElement();
+
+  const handleOrderClick = (e) => {
+    e.preventDefault();
+    scrollToElement(s.link || "contact");
+  };
+
   return (
     <motion.div
       key={s.id}
@@ -115,13 +123,14 @@ function ScheduleCard({ s, index = 0 }) {
                 Coming Soon
               </button>
             ) : (
-              <motion.a
-                href={s.link || "#"}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--brand-blue) text-white text-sm font-semibold shadow-sm hover:opacity-95"
+              <motion.button
+                onClick={handleOrderClick}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white text-sm font-semibold shadow-sm hover:opacity-95 border-none cursor-pointer"
+                style={{ backgroundColor: "var(--brand-blue)" }}
                 whileTap={{ scale: 0.98 }}
               >
                 Order Now
-              </motion.a>
+              </motion.button>
             )}
           </div>
         </div>

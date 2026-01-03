@@ -2,6 +2,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import { useScrollToElement } from "../hooks/useScrollToElement";
 import heroBg from "../assets/hero.jpg";
 import extras1 from "../assets/extras/cake.jpg";
 import extras2 from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
@@ -10,9 +11,17 @@ import extras3 from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
 const IMAGES = [extras1, extras2, extras3];
 
 export default function Hero() {
+  const { scrollToElement } = useScrollToElement();
+
+  const handleScroll = (e, section) => {
+    e.preventDefault();
+    scrollToElement(section);
+  };
+
   return (
     <motion.section
       className="relative w-full h-screen overflow-hidden"
+      data-section="hero"
       style={{
         backgroundImage: `url(${heroBg})`,
         backgroundSize: "cover",
@@ -48,14 +57,9 @@ export default function Hero() {
               events, and custom catering.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <motion.a
-                href="#order"
-                className="px-8 py-4 rounded-full text-white font-semibold text-lg shadow-xl"
-                style={{
-                  backgroundColor: "var(--brand-red)",
-                  background:
-                    "linear-gradient(135deg, var(--brand-red) 0%, #ff6b6b 100%)",
-                }}
+              <motion.button
+                onClick={(e) => handleScroll(e, "contact")}
+                className="px-8 py-4 rounded-full text-white font-semibold text-lg shadow-xl border-none cursor-pointer bg-red-500"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(220, 38, 127, 0.3)",
@@ -75,10 +79,10 @@ export default function Hero() {
                 }}
               >
                 Place an Order
-              </motion.a>
-              <motion.a
-                href="#learn"
-                className="px-8 py-4 rounded-full border-2 border-gray-300 font-semibold text-lg text-white bg-white/20 backdrop-blur-sm"
+              </motion.button>
+              <motion.button
+                onClick={(e) => handleScroll(e, "intro")}
+                className="px-8 py-4 rounded-full border-2 border-gray-300 font-semibold text-lg text-white bg-white/20 backdrop-blur-sm transition-all cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(255, 255, 255, 0.3)",
@@ -87,7 +91,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
               >
                 Learn more
-              </motion.a>
+              </motion.button>
             </div>
 
             <motion.div

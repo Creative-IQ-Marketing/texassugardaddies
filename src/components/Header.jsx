@@ -3,12 +3,13 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useScrollToElement } from "../hooks/useScrollToElement";
 
 const NAV_LINKS = [
-  { label: "Menu", href: "#menu" },
-  { label: "About", href: "#about" },
-  { label: "Catering", href: "#catering" },
-  { label: "Contact", href: "#contact" },
+  { label: "Menu", section: "menu" },
+  { label: "About", section: "intro" },
+  { label: "Catering", section: "services" },
+  { label: "Contact", section: "contact" },
 ];
 
 const SOCIAL_LINKS = [
@@ -19,6 +20,7 @@ const SOCIAL_LINKS = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { scrollToElement } = useScrollToElement();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +29,11 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e, section) => {
+    e.preventDefault();
+    scrollToElement(section);
+  };
 
   return (
     <motion.header
@@ -44,7 +51,10 @@ export default function Header() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <a href="#home" className="block -ml-2">
+          <button
+            onClick={(e) => handleNavClick(e, "hero")}
+            className="block -ml-2 bg-none border-none cursor-pointer"
+          >
             <motion.img
               src={logo}
               alt="Texas Sugar Daddies"
@@ -52,7 +62,7 @@ export default function Header() {
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
-          </a>
+          </button>
         </motion.div>
 
         <motion.nav
@@ -70,10 +80,10 @@ export default function Header() {
           }}
         >
           {NAV_LINKS.map((link) => (
-            <motion.a
-              key={link.href}
-              href={link.href}
-              className="transition-transform duration-200"
+            <motion.button
+              key={link.section}
+              onClick={(e) => handleNavClick(e, link.section)}
+              className="transition-transform duration-200 bg-none border-none cursor-pointer"
               variants={{
                 hidden: { opacity: 0, y: -20 },
                 visible: { opacity: 1, y: 0 },
@@ -83,7 +93,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               {link.label}
-            </motion.a>
+            </motion.button>
           ))}
         </motion.nav>
 
@@ -110,9 +120,9 @@ export default function Header() {
             ))}
           </div>
 
-          <motion.a
-            href="#contact"
-            className="px-5 py-2 rounded-full font-medium shadow-md"
+          <motion.button
+            onClick={(e) => handleNavClick(e, "contact")}
+            className="px-5 py-2 rounded-full font-medium shadow-md border-none cursor-pointer"
             style={{ backgroundColor: "var(--brand-blue)", color: "white" }}
             whileHover={{
               scale: 1.05,
@@ -123,7 +133,7 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 400 }}
           >
             Get Your Quote
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </motion.header>
