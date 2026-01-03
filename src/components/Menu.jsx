@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Truck, Utensils, Plus, Phone } from "lucide-react";
 import menuData from "../data/menu.json";
 
 export default function RestaurantMenu() {
@@ -13,23 +14,23 @@ export default function RestaurantMenu() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-5">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        <div className="text-center mb-12 space-y-3">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             {menuData.title}
           </h1>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+          <p className="text-base text-gray-600 max-w-4xl mx-auto">
             {menuData.subtitle}
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {menuData.categories.map((category) => (
             <motion.button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
                 activeCategory === category.id
                   ? "bg-blue-600 text-white shadow-xl"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -47,7 +48,7 @@ export default function RestaurantMenu() {
             transition={{ duration: 0.5 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="space-y-6">
+            <div className="space-y-4">
               {currentItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -55,27 +56,27 @@ export default function RestaurantMenu() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 8 }}
-                  className="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-600 hover:shadow-xl transition-all duration-300"
+                  className="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-blue-600 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div className="flex-1">
-                      <div className="flex items-start justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900">
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="text-lg font-bold text-gray-900">
                           {item.name}
                         </h3>
                         {item.badge && (
-                          <span className="ml-4 px-4 py-1 rounded-full bg-blue-100 text-blue-800 font-semibold text-sm whitespace-nowrap">
+                          <span className="ml-3 px-3 py-0.5 rounded-full bg-blue-100 text-black font-semibold text-xs whitespace-nowrap">
                             {item.badge}
                           </span>
                         )}
                       </div>
-                      <p className="text-gray-600 text-base leading-relaxed">
+                      <p className="text-gray-600 text-sm leading-relaxed">
                         {item.description}
                       </p>
                     </div>
-                    <div className="md:ml-8 flex-shrink-0">
+                    <div className="md:ml-6 shrink-0">
                       <div className="text-right">
-                        <div className="text-3xl font-bold text-blue-600 whitespace-nowrap">
+                        <div className="text-2xl font-bold text-black whitespace-nowrap">
                           {item.price}
                         </div>
                       </div>
@@ -87,11 +88,42 @@ export default function RestaurantMenu() {
           </motion.div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-500 text-lg">
-              No items available in this category.
-            </p>
+            <p className="text-gray-500 text-lg">Coming soon.</p>
           </div>
         )}
+
+        <div className="border-t border-gray-200 mt-16 pt-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {menuData.tagline.items.map((item, index) => {
+              const getIcon = (iconName) => {
+                const iconProps = "w-8 h-8 text-blue-600 mb-2";
+                switch (iconName) {
+                  case "truck":
+                    return <Truck className={iconProps} />;
+                  case "utensils":
+                    return <Utensils className={iconProps} />;
+                  case "plus":
+                    return <Plus className={iconProps} />;
+                  case "phone":
+                    return <Phone className={iconProps} />;
+                  default:
+                    return null;
+                }
+              };
+
+              return (
+                <div key={index} className="text-center group">
+                  <div className="flex justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {getIcon(item.icon)}
+                  </div>
+                  <p className="text-gray-700 font-semibold text-sm group-hover:text-blue-600 transition-colors duration-300">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

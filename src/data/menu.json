@@ -1,6 +1,26 @@
 {
   "title": "Texas Sugar Daddies Menu",
   "subtitle": "Sweet Treats + Catering – From breakfast boxes to buffet service, we've got your Texas-sized appetite covered",
+  "tagline": {
+    "items": [
+      {
+        "icon": "truck",
+        "text": "Delivery Available"
+      },
+      {
+        "icon": "utensils",
+        "text": "Full Service Options"
+      },
+      {
+        "icon": "plus",
+        "text": "Custom Orders Welcome"
+      },
+      {
+        "icon": "phone",
+        "text": "(210) 281 1415"
+      }
+    ]
+  },
   "categories": [
     {
       "id": "breakfast-boxes",
@@ -39,27 +59,249 @@
     {
       "id": "buffet-breakfast",
       "name": "Buffet Breakfast",
-      "items": []
+      "items": [
+        {
+          "name": "Casserole Buffet Breakfast with Service",
+          "price": "$14.50 per person",
+          "description": "Egg, Cheese and Veggie Casserole with choice of Bacon, Ham, or County Sausage. Includes Breakfast Potatoes, Seasonal Fruit Mix, Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.",
+          "badge": "Full Service",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Fiesta Breakfast Buffet with Service",
+          "price": "$13.50 per person",
+          "description": "Scrambled Egg Mixed with choice of Bacon, Ham, or County Sausage. Includes Potatoes a La Mexicana, Refried Beans and Chorizo, Two Tortillas, Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.",
+          "badge": "Tex-Mex Style",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Hot Oatmeal Bar with Service",
+          "price": "$12.50 per person",
+          "description": "Freshly Prepared Oatmeal with Ultimate Toppings: Chocolate Chips, Seasonal Fruit, Brown Sugar, Syrup, Granola, Nuts, Cinnamon, Honey. Includes Variety of Mini Pastries, Orange Juice, Coffee, Water and Ice.",
+          "badge": "Healthy Choice",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
     },
     {
       "id": "hot-meals",
       "name": "Hot Meals To Go",
-      "items": []
+      "items": [
+        {
+          "name": "Texas Fiesta Taco Plate",
+          "price": "$15.50 per person",
+          "description": "A flavor explosion with your choice of seasoned ground beef, marinated grilled chicken or pork asada served with 3 mini tortillas fresh salsa, spanish rice and charro beans. Comes with Chef Choice Pastry Tray.",
+          "badge": "Fiesta Style",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "David's BBQ Shredded Beef on a Bun",
+          "price": "$14.50 per person",
+          "description": "Slow cooked, smokey Texas-style shredded beef, paired with our house made BBQ sauce served on a flour tortilla (comes with 2) and a side of potato salad, onions and pickles. Comes with Chef Choice Pastry Tray.",
+          "badge": "BBQ Special",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Chris' Texas Roasted Chicken",
+          "price": "$13.75 per person",
+          "description": "Oven roasted seasoned leg quarter chicken accompanied by seasonal flavored vegetables and garlic butter mashed potatoes. Comes with Chef Choice Pastry Tray.",
+          "badge": "Comfort Food",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Arroz con Pollo",
+          "price": "$13.00 per person",
+          "description": "Tender chicken pieces simmered in a savory blend of tomatoes, onions, garlic and spices, served on a bed of Spanish rice. Accompanied with charro beans. Comes with Chef Choice Pastry Tray.",
+          "badge": "Traditional",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Fideo Loco",
+          "price": "$12.50 per person",
+          "description": "So many good flavors...it's crazy! Ground beef, potatoes, beans and fideo in a delicious broth served with 2 flour tortillas. Comes with Chef Choice Pastry Tray.",
+          "badge": "Family Favorite",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
     },
     {
       "id": "boxed-lunches",
       "name": "Boxed Lunches",
-      "items": []
+      "items": [
+        {
+          "name": "Boxed Lunches",
+          "price": "$13.95 per person + tax",
+          "description": "Includes Napkins and Utensils if needed. Delivery Fee: $10 inside Loop 410 and $20 outside Loop 410.",
+          "badge": "Complete Meals",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "The Texas Club",
+          "price": "Included",
+          "description": "Sliced turkey breast, ham, smoked bacon and American cheese with all the sandwich fixin's (lettuce, tomatoes) between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.",
+          "badge": "Loaded Sandwich",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Italian Grilled Sandwich",
+          "price": "Included",
+          "description": "Ham, salami, cheese with lettuce, tomato and Italian vinaigrette between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.",
+          "badge": "Italian Style",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Chicken Salad Sandwich",
+          "price": "Included",
+          "description": "Shredded chicken, with lettuce, tomato and TSD touch of seasonings between bread. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.",
+          "badge": "Fresh & Light",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Pizza Quesadilla",
+          "price": "Included",
+          "description": "3 pieces made with mozzarella cheese and pepperoni and a side of house made marinara sauce. Served with Assorted Chips, a Pickle Spear and a Texas Sugar Daddies Cookie of the Day.",
+          "badge": "Kid Favorite",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Texas Caesar Bacon Salad",
+          "price": "Included",
+          "description": "Grilled Chicken slices, bacon with romaine lettuce, tomatoes parmesan cheese and our house-made Caesar dressing. Served with a Texas Sugar Daddies Cookie of the Day.",
+          "badge": "Salad Option",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Desserts",
+          "price": "$4.00 each",
+          "description": "Texan Banana Pudding, Mexican Chocolate Pudding, Sweet Potato Pie Pudding.",
+          "badge": "Texan Treats",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
     },
     {
       "id": "sweet-treats",
       "name": "Sweet Treats",
-      "items": []
+      "items": [
+        {
+          "name": "Standard Cupcakes",
+          "price": "$25 per dozen",
+          "description": "Mexican Chocolate, Strawberry, and Mexican Vanilla flavors.",
+          "badge": "Classic Flavors",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Specialty Cupcakes",
+          "price": "$35 per dozen",
+          "description": "Mangonada, Oreo, Hawaiian, Texican Chocolate, Cascarone, Concha, Fressanada, Atole de Arroz, and other customized options.",
+          "badge": "Unique Flavors",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Mini Cupcakes",
+          "price": "$15 per dozen",
+          "description": "One dozen mini cupcakes in various flavors.",
+          "badge": "Mini Size",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Cakes",
+          "price": "$35+ starting",
+          "description": "Smash Cake (5\" round): $35 | Round Cake (10\" round): $50 | 1/4 Sheet: $45 | 1/2 Sheet: $75 | 10\" Bundt: $45 | Mini Bundles: $36 per dozen. All with custom designs.",
+          "badge": "Custom Designs",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Cookies by Baker's Dozen (13)",
+          "price": "$12 per dozen",
+          "description": "TSD Signature Wedding Cookies, Texas Shaped Pan de Polvo, Decorated Sugar Cookies, Peanut Butter, Chocolate Crinkle, Lemon Crinkle, Peanut Butter Temptation. Wide variety of flavors available.",
+          "badge": "Baker's Choice",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Decorated Sugar Cookies",
+          "price": "$4.50 each",
+          "description": "Printed and decorated sugar cookies. Price varies by size and design.",
+          "badge": "Custom Decorated",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Other Sweet Options",
+          "price": "$15+ each",
+          "description": "Cake Pops: $25/cz | Lollipops: $25/ctz | Candied Pecans: $15/lb (Texas Pecans coated in sugar and cinnamon). Wide variety of flavors available.",
+          "badge": "Sweet Variety",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Pies",
+          "price": "$25+ starting",
+          "description": "Pecan, Pumpkin, Sweet Potato, Chocolate Silk, Coconut Creme, Banana Pudding, Buttermilk, Lemon Meringue, Cherry, Apple, and many other flavors. 9\" Deep Dish: $25 starting | Mini Pies: $30/dz",
+          "badge": "Traditional Pies",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
     },
     {
       "id": "venue-buffet",
       "name": "Venue Buffet",
-      "items": []
+      "items": [
+        {
+          "name": "Brisket Buffet",
+          "price": "$16.95 per person",
+          "description": "BBQ Brisket, Sausage, Potato Salad, Rice, Beans, Pickle Slices, Onion, BBQ Sauce, Jalapenos and Sliced Bread.",
+          "badge": "BBQ Favorite",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "BBQ Chicken Buffet",
+          "price": "$15.75 per person",
+          "description": "Chicken Leg Quarters and Sausage, Rice, Beans, Pickle Slices, Onion, BBQ Sauce, Jalapenos and Sliced Bread.",
+          "badge": "Chicken Variety",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Mini Taco Bar",
+          "price": "$15.25 per person",
+          "description": "3 Mini Tacos of Diced Chicken Fajita, Al Pastor and Carne Asada. Sides include Rice, Charro Beans, Cilantro, Onions, Salsa, Limes and Sour Cream.",
+          "badge": "Taco Variety",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Pasta Bar",
+          "price": "$14.75 per person",
+          "description": "Serving of Pasta, Marinara Sauce, Alfredo Sauce, Seasoned Ground Meat, Diced Chicken, Garlic Bread and Salad Bar.",
+          "badge": "Italian Style",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Baked Chicken Buffet",
+          "price": "$13.75 per person",
+          "description": "Leg Quarter with Garlic Mashed Potatoes, Steamed Veggie, and Salad Bar.",
+          "badge": "Comfort Food",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Discada Buffet",
+          "price": "$13.75 per person",
+          "description": "Saucy Meat Mixed Variety, Tortillas, Salsa, Rice and Beans.",
+          "badge": "Mixed Grill",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Fideo Loco Buffet",
+          "price": "$12.75 per person",
+          "description": "Fideo with Ground Meat, a side of Charro Beans, and 2 Flour Tortillas.",
+          "badge": "Traditional Dish",
+          "badgeColor": "bg-green-100 text-green-800"
+        },
+        {
+          "name": "Buffet Service Includes",
+          "price": "Included",
+          "description": "One Hour Buffet and Beverage Service includes: Iced Tea, Lemonade, Cups, Plates, Napkins, Utensils. We also offer Bakery Items including Cake, Cookies, and other Assorted Desserts at additional cost.",
+          "badge": "Full Service",
+          "badgeColor": "bg-green-100 text-green-800"
+        }
+      ]
     }
   ]
 }
