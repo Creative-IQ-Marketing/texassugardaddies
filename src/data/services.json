@@ -1,0 +1,38 @@
+{
+  "title": "We Do It All!",
+  "subtitle": "From our weekday cafe to custom catering and sweet treats – your Texas Sugar Daddies have got you covered",
+  "services": [
+    {
+      "id": 1,
+      "title": "The Bakery",
+      "desc": "From our signature cookies and cupcakes to custom cakes and personalized sugar cookies with custom printing, we create sweet treats that make every occasion special.",
+      "img": "cake.jpg",
+      "btn": "PLACE AN ORDER TODAY",
+      "link": "#order"
+    },
+    {
+      "id": 2,
+      "title": "The Cafe",
+      "desc": "Join us Monday through Thursday for lunchtime bites, daily specials, and grab-and-go options. Perfect for a quick meal or casual dining experience.",
+      "img": "imgi_4_68c0e4f744a6632cc3db5706.jpg",
+      "btn": "PLACE AN ORDER TODAY",
+      "link": "#order"
+    },
+    {
+      "id": 3,
+      "title": "The Caterers",
+      "desc": "Professional onsite and offsite catering services with custom menu development. We bring the restaurant experience to your event location.",
+      "img": "imgi_5_68c0e4f632f3399471194aff.jpg",
+      "btn": "LET US CATER TO YOU",
+      "link": "#catering"
+    },
+    {
+      "id": 4,
+      "title": "Venue Rentals",
+      "desc": "Host your next event at our beautiful venue! Perfect for corporate meetings, birthday parties, and special celebrations. Capacity: 150 people with full amenities.",
+      "img": "imgi_6_68c0e4f6fc367038f91acf8a.jpg",
+      "btn": "HOST YOUR EVENT HERE",
+      "link": "#venue"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Contact Us to Order!",
+  "heading": "Get in Touch",
+  "description": "Ready to taste the difference? Contact us to place your order or discuss your custom baking needs.",
+  "tagline": "Life is short, eat dessert first!",
+  "contacts": [
+    {
+      "type": "address",
+      "label": "Address",
+      "value": "1135 Mission Rd, Building 9, San Antonio, TX, United States, 78210"
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "value": "order@texassugardaddies.com",
+      "href": "mailto:order@texassugardaddies.com"
+    },
+    {
+      "type": "phone",
+      "label": "Phone",
+      "value": "(210) 281 1415",
+      "href": "tel:+12102811415"
+    }
+  ],
+  "form": {
+    "submitText": "Send Message",
+    "consentText": "I Consent to Receive SMS Notifications, Alerts & Occasional Marketing Communication from company. Message frequency varies."
+  }
+}

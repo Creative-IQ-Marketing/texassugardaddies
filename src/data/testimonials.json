@@ -1,0 +1,66 @@
+{
+  "title": "What Our Clients Say",
+  "subtitle": "Don't just take our word for it - hear from the clients who've experienced our exceptional catering services",
+  "testimonials": [
+    {
+      "id": 1,
+      "rating": 5,
+      "quote": "Absolutely incredible! The food was amazing and the service was top-notch. Our wedding guests are still talking about it!",
+      "name": "Sarah Johnson",
+      "role": "Bride"
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "quote": "Perfect for our corporate event. Professional, delicious, and exactly what we needed. Will definitely use again!",
+      "name": "Michael Chen",
+      "role": "Office Manager"
+    },
+    {
+      "id": 3,
+      "rating": 5,
+      "quote": "The best BBQ in town! The brisket was melt-in-your-mouth tender and the sides were perfect.",
+      "name": "David Rodriguez",
+      "role": "Birthday Party Host"
+    },
+    {
+      "id": 4,
+      "rating": 5,
+      "quote": "Texas Sugar Daddies made our anniversary celebration unforgettable. The custom menu was perfect!",
+      "name": "Jennifer Martinez",
+      "role": "Anniversary Party"
+    },
+    {
+      "id": 5,
+      "rating": 5,
+      "quote": "Amazing cupcakes and cookies! The custom printing on the sugar cookies is exactly what we wanted.",
+      "name": "Lisa Thompson",
+      "role": "Baby Shower Host"
+    },
+    {
+      "id": 6,
+      "rating": 5,
+      "quote": "Great venue and even better food! The team was professional and everything went smoothly.",
+      "name": "Robert Wilson",
+      "role": "Corporate Event"
+    }
+  ],
+  "stats": [
+    {
+      "number": "2017",
+      "label": "Started Online"
+    },
+    {
+      "number": "5★",
+      "label": "Customer Love"
+    },
+    {
+      "number": "2",
+      "label": "Foodie Dads"
+    },
+    {
+      "number": "100",
+      "label": "Epic Bites"
+    }
+  ]
+}
