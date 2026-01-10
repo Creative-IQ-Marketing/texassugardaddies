@@ -13,9 +13,16 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { name: "Facebook", href: "https://facebook.com", Icon: FaFacebookF },
-  { name: "Twitter", href: "https://twitter.com", Icon: FaTwitter },
-  { name: "Instagram", href: "https://instagram.com", Icon: FaInstagram },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/TexasSugarDaddies/",
+    Icon: FaFacebookF,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/texassugardaddies/",
+    Icon: FaInstagram,
+  },
 ];
 
 export default function Header() {

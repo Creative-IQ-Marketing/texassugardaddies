@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MapPin, Mail, Phone } from "lucide-react";
 import contactData from "../data/contact.json";
+import { submitToGHL } from "../services/ghl";
+import { trackEvent } from "../services/analytics";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +12,8 @@ export default function Contact() {
     message: "",
     consent: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -19,8 +23,51 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.email || !formData.phone || !formData.consent) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please fill all required fields and accept consent",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      await submitToGHL(formData);
+
+      trackEvent("form_submission", {
+        form_name: "contact_form",
+        form_destination: "ghl",
+      });
+
+      setSubmitStatus({
+        type: "success",
+        message: "Thank you! We will contact you soon.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        consent: false,
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+      trackEvent("form_error", {
+        form_name: "contact_form",
+        error_message: error.message,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -128,11 +175,24 @@ export default function Contact() {
                 </span>
               </label>
 
+              {submitStatus && (
+                <div
+                  className={`p-4 rounded-xl text-center font-semibold ${
+                    submitStatus.type === "success"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-8 py-5 bg-blue-100 text-gray-700 font-bold rounded-xl hover:bg-blue-200 active:scale-95 transition-all duration-200 text-lg tracking-wide"
+                disabled={isSubmitting}
+                className="w-full px-8 py-5 bg-blue-100 text-gray-700 font-bold rounded-xl hover:bg-blue-200 active:scale-95 transition-all duration-200 text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {contactData.form.submitText}
+                {isSubmitting ? "Sending..." : contactData.form.submitText}
               </button>
             </form>
           </div>

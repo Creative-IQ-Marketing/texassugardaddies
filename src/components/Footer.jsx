@@ -2,11 +2,17 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const SOCIAL_ICONS = [
-  { Icon: FaFacebookF, href: "https://facebook.com/texassugardaddies" },
-  { Icon: FaInstagram, href: "https://instagram.com/texassugardaddies" },
+  {
+    Icon: FaFacebookF,
+    href: "https://www.facebook.com/TexasSugarDaddies/",
+  },
+  {
+    Icon: FaInstagram,
+    href: "https://www.instagram.com/texassugardaddies/",
+  },
   {
     Icon: FaLinkedinIn,
-    href: "https://linkedin.com/company/texassugardaddies",
+    href: "https://www.linkedin.com/in/texas-sugar-daddies-a0512829a/",
   },
 ];
 
