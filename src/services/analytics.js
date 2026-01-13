@@ -1,6 +1,6 @@
+const GTM_ID = 'GT-NBQPLNB5';
+const GA_ID = 'G - HQWELS4TBJ'
 export const initGA = () => {
-  const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
-
   if (!GA_ID) return;
 
   const script1 = document.createElement('script');
@@ -21,8 +21,6 @@ export const initGA = () => {
 };
 
 export const initGTM = () => {
-  const GTM_ID = import.meta.env.VITE_GTM_ID;
-
   if (!GTM_ID) return;
 
   const script = document.createElement('script');
@@ -48,7 +46,7 @@ export const trackEvent = (eventName, eventParams = {}) => {
 
 export const trackPageView = (path) => {
   if (window.gtag) {
-    window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID, {
+    window.gtag('config', GA_ID, {
       page_path: path,
     });
   }
