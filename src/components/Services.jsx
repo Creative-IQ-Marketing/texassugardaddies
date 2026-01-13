@@ -19,7 +19,8 @@ function ServiceCard({ title, desc, img, btn, link, index }) {
 
   const handleButtonClick = (e) => {
     e.preventDefault();
-    scrollToElement(link || "contact");
+    console.log(link);
+    scrollToElement("contact");
   };
 
   return (
