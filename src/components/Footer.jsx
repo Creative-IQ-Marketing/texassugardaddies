@@ -42,7 +42,17 @@ export default function Footer() {
 
         <div className="text-xs text-white text-right">
           <p>© 2025 Texas Sugar Daddies. All rights reserved.</p>
-          <p>CreativeIQ Digital Marketing • San Antonio, Texas</p>
+          <p>
+            <a
+              href="https://creativeiq.marketing/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-300 transition-colors"
+            >
+              CreativeIQ Digital Marketing
+            </a>{" "}
+            • San Antonio, Texas
+          </p>
         </div>
       </div>
     </footer>
