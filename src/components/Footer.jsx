@@ -60,7 +60,7 @@ export default function Footer() {
               custom cakes, catering, and cafe experiences in San Antonio.
             </p>
             <div className="flex gap-4">
-              {SOCIAL_ICONS.map(({ Icon, href, label }) => (
+              {SOCIAL_ICONS.map(({ href, label }) => (
                 <a
                   key={label}
                   href={href}
