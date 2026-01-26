@@ -85,40 +85,32 @@ export default function WelcomePopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn">
-      <div
-        className="bg-white rounded-3xl shadow-2xl max-w-lg w-full relative animate-slideUp overflow-hidden"
-        style={{
-          backgroundImage: "url(/src/assets/daddies.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
-
-        {/* Close Button */}
+    <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+      <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl md:rounded-3xl shadow-2xl max-w-lg w-full relative animate-slideUp overflow-hidden my-auto">
+        {/* Close Button - optimized for mobile & desktop */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-white hover:text-gray-200 transition-colors z-20 bg-black/30 rounded-full p-2 hover:bg-black/50"
+          className="absolute top-2 right-2 md:top-3 md:right-3 text-white hover:text-gray-900 transition-colors z-20 bg-red-600 hover:bg-white rounded-full p-1.5 md:p-2.5 shadow-md border-none cursor-pointer"
           aria-label="Close popup"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 md:w-6 md:h-6" />
         </button>
 
         {/* Banner */}
-        <div className="absolute top-0 left-0 right-0 bg-gray-800 text-white py-3 px-6 text-center font-bold text-lg z-10 flex items-center justify-center gap-2">
-          <span className="text-2xl">
-            <Gift />
+        <div className="bg-gray-800 text-white py-3 px-4 md:px-6 text-center font-bold text-base md:text-lg flex items-center justify-center gap-2">
+          <span className="text-xl md:text-2xl">
+            <Gift className="w-5 h-5 md:w-6 md:h-6" />
           </span>
-          <span>Free Delivery for orders $10+</span>
+          <span className="text-sm md:text-base">
+            Free Delivery for orders $10+
+          </span>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 pt-24 px-8 pb-8">
+        <div className="px-5 py-5 md:px-8 md:py-8">
           {submitStatus && (
             <div
-              className={`mb-6 p-4 rounded-lg font-semibold text-center text-sm ${
+              className={`mb-4 md:mb-6 p-3 md:p-4 rounded-lg font-semibold text-center text-xs md:text-sm ${
                 submitStatus.type === "success"
                   ? "bg-green-100 text-green-800"
                   : "bg-red-100 text-red-800"
@@ -128,14 +120,14 @@ export default function WelcomePopup() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-5 py-3.5 bg-white/95 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-base font-medium placeholder-gray-500"
+              className="w-full px-4 py-2.5 md:py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-sm md:text-base font-medium placeholder-gray-500"
             />
 
             <input
@@ -144,7 +136,7 @@ export default function WelcomePopup() {
               placeholder="Your Email*"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-5 py-3.5 bg-white/95 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-base font-medium placeholder-gray-500"
+              className="w-full px-4 py-2.5 md:py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-sm md:text-base font-medium placeholder-gray-500"
             />
 
             <input
@@ -153,36 +145,36 @@ export default function WelcomePopup() {
               placeholder="Your Phone*"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-5 py-3.5 bg-white/95 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-base font-medium placeholder-gray-500"
+              className="w-full px-4 py-2.5 md:py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 text-sm md:text-base font-medium placeholder-gray-500"
             />
 
             <textarea
               name="message"
-              placeholder="Tell us about your order or special request"
+              placeholder="Tell us about your order..."
               value={formData.message}
               onChange={handleChange}
-              rows="4"
-              className="w-full px-5 py-3.5 bg-white/95 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 resize-none text-base font-medium placeholder-gray-500"
+              rows="3"
+              className="w-full px-4 py-2.5 md:py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-gray-500 focus:bg-white transition-all duration-200 resize-none text-sm md:text-base font-medium placeholder-gray-500"
             ></textarea>
 
-            <label className="flex items-start gap-3 text-gray-700 text-sm cursor-pointer group bg-white/90 p-4 rounded-lg">
+            <label className="flex items-start gap-2 md:gap-3 text-gray-700 text-xs md:text-sm cursor-pointer group bg-white p-3 md:p-4 rounded-lg">
               <input
                 type="checkbox"
                 name="consent"
                 checked={formData.consent}
                 onChange={handleChange}
-                className="w-5 h-5 accent-gray-800 cursor-pointer mt-0.5 shrink-0"
+                className="w-4 h-4 md:w-5 md:h-5 accent-gray-800 cursor-pointer mt-0.5 shrink-0"
               />
-              <span className="group-hover:text-gray-900 transition-colors duration-300 leading-relaxed font-medium">
+              <span className="group-hover:text-gray-900 transition-colors duration-300 leading-relaxed font-medium text-[10px] md:text-sm">
                 I Consent to Receive SMS Notifications, Alerts & Occasional
-                Marketing Communication from company. Message frequency varies.
+                Marketing Communication. Message frequency varies.
               </span>
             </label>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-8 py-4 bg-white text-gray-800 font-bold rounded-lg hover:bg-gray-100 active:scale-95 transition-all duration-200 text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="w-full px-6 py-2.5 md:py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-900 active:scale-95 transition-all duration-200 text-sm md:text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed shadow-lg border-none cursor-pointer"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </button>

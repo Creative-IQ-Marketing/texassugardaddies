@@ -97,11 +97,15 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-6">Our Services</h3>
             <ul className="space-y-4">
-              <li className="text-slate-400">Custom Cakes & Desserts</li>
-              <li className="text-slate-400">Weekday Cafe & Lunch</li>
-              <li className="text-slate-400">Corporate Catering</li>
-              <li className="text-slate-400">Wedding Catering</li>
-              <li className="text-slate-400">Event Venue Rentals</li>
+              <li className="text-slate-400">
+                Breakfast Boxes & Buffet Breakfast
+              </li>
+              <li className="text-slate-400">Hot Meals To Go</li>
+              <li className="text-slate-400">Boxed Lunches</li>
+              <li className="text-slate-400">Sweet Treats & Custom Cakes</li>
+              <li className="text-slate-400">
+                Venue Buffet & Full-Service Catering
+              </li>
             </ul>
           </div>
 
