@@ -47,8 +47,16 @@ export async function submitToGHL(formData) {
     if (formData.consent) {
       editedTags.push('newsletter')
     }
+
+    const fullName = formData.name ? formData.name.trim() : '';
+    const nameParts = fullName.split(' ');
+    const firstName = nameParts[0] || '';
+    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+
     const contactData = {
-      name: formData.name,
+      firstName: firstName,
+      lastName: lastName,
+      name: fullName, 
       email: formData.email,
       phone: formData.phone,
       locationId: GHL_LOCATION_ID,
