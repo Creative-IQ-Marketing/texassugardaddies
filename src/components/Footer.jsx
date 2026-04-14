@@ -53,11 +53,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white tracking-tight">
-              Texas Sugar Daddies
+              San Antonio Catering & Bakery
             </h2>
             <p className="text-slate-400 leading-relaxed">
-              From corporate cubicles to the kitchen, bringing you the finest
-              custom cakes, catering, and cafe experiences in San Antonio.
+              Professional catering services and custom bakery in San Antonio
+              since 2017. Specializing in wedding catering, corporate events,
+              custom cakes, and event venue rental.
             </p>
             <div className="flex gap-4">
               {SOCIAL_ICONS.map(({ Icon, href, label }) => (
@@ -95,23 +96,30 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Our Services</h3>
+            <h3 className="text-white font-bold text-lg mb-6">
+              Catering & Bakery Services
+            </h3>
             <ul className="space-y-4">
+              <li className="text-slate-400">Wedding Catering San Antonio</li>
+              <li className="text-slate-400">Corporate Event Catering</li>
+              <li className="text-slate-400">Custom Cakes & Wedding Cakes</li>
               <li className="text-slate-400">
-                Breakfast Boxes & Buffet Breakfast
+                Bakery - Cupcakes, Cookies, Desserts
               </li>
-              <li className="text-slate-400">Hot Meals To Go</li>
-              <li className="text-slate-400">Boxed Lunches</li>
-              <li className="text-slate-400">Sweet Treats & Custom Cakes</li>
               <li className="text-slate-400">
-                Venue Buffet & Full-Service Catering
+                Event Venue Rental - up to 150 guests
+              </li>
+              <li className="text-slate-400">
+                Lunch Cafe - Tuesday-Thursday 11am-3pm
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Contact Us</h3>
+            <h3 className="text-white font-bold text-lg mb-6">
+              Contact San Antonio Caterer
+            </h3>
             <ul className="space-y-5">
               {address && (
                 <li className="flex items-start gap-3">

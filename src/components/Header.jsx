@@ -64,7 +64,7 @@ export default function Header() {
           >
             <motion.img
               src={logo}
-              alt="Texas Sugar Daddies"
+              alt="San Antonio Bakery and Catering Company Logo - Custom Cakes and Event Services"
               className="h-16 w-16 md:h-24 md:w-24 object-contain"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}

@@ -1,3 +1,4 @@
+# San Antonio Catering & Bakery - Robots.txt
 User-agent: *
 Allow: /
 
@@ -7,6 +8,25 @@ Sitemap: https://texassugardaddies.com/sitemap.xml
 # Crawl-delay for bots
 Crawl-delay: 0
 
-# Block sensitive paths (if any in the future)
+# Block sensitive paths
 Disallow: /admin/
 Disallow: /.env
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow important assets
+Allow: /src/assets/
+Allow: /og-image.jpg
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

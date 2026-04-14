@@ -17,6 +17,10 @@ export default function Intro() {
           <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
             From Cubicles to Kitchen Since 2017
           </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Professional catering services, custom bakery, and event venue in
+            San Antonio, Texas
+          </p>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </motion.div>
 
@@ -66,9 +70,10 @@ export default function Intro() {
               }}
             >
               {[
-                "Weekday cafe with daily specials & salad bar",
-                "Custom sweet treats and desserts",
-                "Event venue and full catering services",
+                "Weekday lunch cafe - Tuesday to Thursday, 11am-3pm",
+                "Custom cakes, cupcakes, cookies & desserts",
+                "Full-service catering for weddings & corporate events",
+                "Event venue rental",
               ].map((t) => (
                 <motion.div
                   key={t}
@@ -99,7 +104,7 @@ export default function Intro() {
               <div className="absolute -inset-4 transform rotate-3"></div>
               <img
                 src={daddies}
-                alt="Texas Sugar Daddies"
+                alt="Two founders of San Antonio catering company and bakery - Professional caterers and bakers"
                 className="relative w-full rounded-3xl shadow-2xl object-cover"
                 style={{ height: 480, maxWidth: 420 }}
               />

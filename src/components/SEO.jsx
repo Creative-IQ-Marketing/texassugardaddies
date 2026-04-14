@@ -26,8 +26,26 @@ export default function SEO({
       { name: "geo.placename", content: "San Antonio" },
       { name: "geo.position", content: "29.4241;-98.4936" },
       { name: "ICBM", content: "29.4241, -98.4936" },
+      { name: "locality", content: "San Antonio, Texas" },
+      { name: "region", content: "Texas" },
+      { name: "country", content: "USA" },
+      {
+        name: "business:contact_data:street_address",
+        content: "1135 Mission Rd, Building 9",
+      },
+      { name: "business:contact_data:locality", content: "San Antonio" },
+      { name: "business:contact_data:region", content: "TX" },
+      { name: "business:contact_data:postal_code", content: "78210" },
+      { name: "business:contact_data:country_name", content: "USA" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:site_name", content: "Texas Sugar Daddies" },
+      {
+        property: "og:site_name",
+        content: "San Antonio Bakery & Catering Services",
+      },
+      {
+        property: "business:contact_data:phone_number",
+        content: "+12102811415",
+      },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
@@ -41,6 +59,15 @@ export default function SEO({
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: window.location.origin + ogImage },
       { name: "twitter:site", content: "@texassugardaddies" },
+      { name: "twitter:creator", content: "@texassugardaddies" },
+      { property: "og:type", content: "business.business" },
+      { property: "og:phone_number", content: "+1-210-281-1415" },
+      { property: "og:email", content: "[email protected]" },
+      { property: "og:street-address", content: "1135 Mission Rd, Building 9" },
+      { property: "og:locality", content: "San Antonio" },
+      { property: "og:region", content: "TX" },
+      { property: "og:postal-code", content: "78210" },
+      { property: "og:country-name", content: "USA" },
     ];
 
     metaTags.forEach(({ name, property, content }) => {

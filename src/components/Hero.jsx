@@ -9,6 +9,11 @@ import extras2 from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
 import extras3 from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
 
 const IMAGES = [extras1, extras2, extras3];
+const IMAGE_ALTS = [
+  "Custom wedding cake by San Antonio bakery - Texas Sugar Daddies catering services",
+  "Fresh baked cupcakes and desserts from San Antonio bakery",
+  "Professional catering setup for San Antonio events and weddings",
+];
 
 export default function Hero() {
   const { scrollToElement } = useScrollToElement();
@@ -49,12 +54,16 @@ export default function Hero() {
             className="space-y-8 lg:pr-12"
           >
             <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
-              Two Dads, One Mission: Epic Bites for All
+              San Antonio Catering & Bakery Experts
             </h2>
+            <h1 className="text-3xl lg:text-4xl font-semibold text-gray-100 mt-4">
+              Professional Wedding & Corporate Catering | Custom Cakes
+            </h1>
             <p className="text-xl text-gray-200 leading-relaxed max-w-lg">
-              From renegade foodies to your Sugar Daddies! We've ditched the
-              cubicles to bring you incredible food at our weekday cafe, special
-              events, and custom catering.
+              San Antonio's premier catering company and custom bakery since
+              2017. From wedding catering to corporate events, custom cakes to
+              weekday cafe lunches - we deliver exceptional food and service for
+              every occasion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <motion.button
@@ -78,7 +87,7 @@ export default function Hero() {
                   ease: "easeInOut",
                 }}
               >
-                Place an Order
+                Order Catering or Bakery
               </motion.button>
               <motion.button
                 onClick={(e) => handleScroll(e, "intro")}
@@ -90,7 +99,7 @@ export default function Hero() {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn more
+                Learn more about our catering
               </motion.button>
             </div>
 
@@ -180,7 +189,7 @@ export default function Hero() {
                 >
                   <img
                     src={img}
-                    alt={`tile-${index}`}
+                    alt={IMAGE_ALTS[index]}
                     className="w-full h-full object-cover rounded-2xl"
                   />
                   <motion.div

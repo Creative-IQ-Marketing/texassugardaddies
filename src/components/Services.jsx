@@ -13,8 +13,20 @@ const imageMap = {
   "imgi_6_68c0e4f6fc367038f91acf8a.jpg": venueImg,
 };
 
+const altTextMap = {
+  "cake.jpg":
+    "Custom wedding cake from San Antonio bakery - Professional cake design and bakery services",
+  "imgi_4_68c0e4f744a6632cc3db5706.jpg":
+    "Fresh baked cupcakes and cookies from San Antonio bakery cafe",
+  "imgi_5_68c0e4f632f3399471194aff.jpg":
+    "Professional catering services San Antonio - Wedding and corporate event catering",
+  "imgi_6_68c0e4f6fc367038f91acf8a.jpg":
+    "San Antonio event venue rental - Wedding and corporate event space",
+};
+
 function ServiceCard({ title, desc, img, btn, link, index }) {
   const imageSrc = imageMap[img];
+  const altText = altTextMap[img] || title;
   const { scrollToElement } = useScrollToElement();
 
   const handleButtonClick = (e) => {
@@ -30,7 +42,7 @@ function ServiceCard({ title, desc, img, btn, link, index }) {
           <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
             <img
               src={imageSrc}
-              alt={title}
+              alt={altText}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
