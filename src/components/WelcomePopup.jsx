@@ -20,7 +20,7 @@ export default function WelcomePopup() {
     const timer = setTimeout(() => {
       setIsVisible(true);
       trackEvent("popup_shown", { popup_type: "order" });
-    }, 5000);
+    }, 20000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -85,7 +85,7 @@ export default function WelcomePopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+    <div className="fixed inset-0 bg-black/40 z-[9999] flex items-center justify-center p-4 backdrop-blur-sm animate-fadeIn overflow-y-auto">
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl md:rounded-3xl shadow-2xl max-w-lg w-full relative animate-slideUp overflow-hidden my-auto">
         {/* Close Button - optimized for mobile & desktop */}
         <button
