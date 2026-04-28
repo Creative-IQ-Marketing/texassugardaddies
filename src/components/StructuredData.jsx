@@ -2,6 +2,97 @@ import { useEffect } from "react";
 
 export default function StructuredData() {
   useEffect(() => {
+    // WebSite Schema with Sitelinks SearchBox
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://texassugardaddies.com/#website",
+      name: "Texas Sugar Daddies",
+      url: "https://texassugardaddies.com",
+      description:
+        "San Antonio's premier custom bakery, catering company & event venue since 2017. Custom cakes, cupcakes, cookies, wedding catering, corporate catering, and full-service event venue for up to 150 guests.",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://texassugardaddies.com/?s={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+    };
+
+    // FAQ Schema — high-value questions for featured snippets
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Does Texas Sugar Daddies make custom cakes in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes! Texas Sugar Daddies is San Antonio's premier custom cake studio. We create custom birthday cakes, wedding cakes, quinceañera cakes, anniversary cakes, baby shower cakes, and more — all made with premium ingredients. Order online or call (210) 281-1415.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What types of catering does Texas Sugar Daddies offer in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Texas Sugar Daddies offers full-service catering in San Antonio for weddings, corporate events, birthday parties, quinceañeras, anniversaries, and private celebrations. We provide custom menus, on-site and off-site catering, professional chefs, and on-time delivery for orders over $10.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Texas Sugar Daddies have an event venue in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — Texas Sugar Daddies has a full-service event venue at 1135 Mission Rd, Building 9, San Antonio, TX 78210 that accommodates up to 150 guests. The venue is available for weddings, corporate events, birthday parties, quinceañeras, and special occasions, all with in-house catering available.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I order a custom wedding cake in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Contact Texas Sugar Daddies at (210) 281-1415 or visit texassugardaddies.com to place a custom wedding cake order. We offer fully custom designs, premium flavors, and have served over 500 clients across San Antonio, TX.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Texas Sugar Daddies offer corporate catering in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Absolutely. Texas Sugar Daddies specializes in corporate event catering throughout San Antonio, TX. From office lunch deliveries to large corporate galas, we provide professional chefs, custom menus, and flawless execution. Call (210) 281-1415 to book.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is there a cafe at Texas Sugar Daddies in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes! The Texas Sugar Daddies cafe is open Tuesday–Thursday from 11:00 AM to 3:00 PM at 1135 Mission Rd, Building 9, San Antonio, TX 78210. We serve daily specials, a salad bar, grab-and-go items, and fresh baked goods.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What custom cookies does Texas Sugar Daddies make?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Texas Sugar Daddies creates fully customized sugar cookies with edible custom printing, perfect for weddings, birthdays, baby showers, quinceañeras, and corporate events. We also make cupcakes and specialty cookies for all occasions in San Antonio, TX.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does catering cost in San Antonio?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Catering prices at Texas Sugar Daddies vary depending on event size, menu selections, and services needed. We offer competitive pricing for wedding catering, corporate catering, and private event catering in San Antonio. Contact us at (210) 281-1415 for a custom quote.",
+          },
+        },
+      ],
+    };
+
     // Organization Schema - Emphasizing services over brand name
     const organizationSchema = {
       "@context": "https://schema.org",
@@ -404,6 +495,8 @@ export default function StructuredData() {
     };
 
     // Add all schemas
+    addSchemaScript(websiteSchema, "website");
+    addSchemaScript(faqSchema, "faq");
     addSchemaScript(organizationSchema, "organization");
     addSchemaScript(localBusinessSchema, "local-business");
     addSchemaScript(bakerySchema, "bakery");

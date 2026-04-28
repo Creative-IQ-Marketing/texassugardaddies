@@ -1,12 +1,12 @@
-# San Antonio Catering & Bakery - Robots.txt
+# Texas Sugar Daddies — San Antonio Bakery, Custom Cakes & Catering
 User-agent: *
 Allow: /
 
-# Sitemaps
+# Sitemap
 Sitemap: https://texassugardaddies.com/sitemap.xml
 
-# Crawl-delay for bots
-Crawl-delay: 0
+# Crawl-delay
+Crawl-delay: 1
 
 # Block sensitive paths
 Disallow: /admin/
@@ -15,17 +15,30 @@ Disallow: /api/
 Disallow: /*.json$
 
 # Allow important assets
-Allow: /src/assets/
 Allow: /og-image.jpg
 Allow: /*.jpg$
 Allow: /*.png$
 Allow: /*.webp$
+Allow: /*.svg$
 
-# Specific bots
+# Google & Bing — full access
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+# AI bots — allow for generative engine visibility
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: Slurp
