@@ -161,18 +161,17 @@ export default function Footer() {
             © {new Date().getFullYear()} Texas Sugar Daddies. All rights
             reserved.
           </p>
-          <div className="flex items-center gap-1">
-            <span>Made</span>
-            <span>by </span>
-            <a
-              href="https://creativeiq.marketing/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors font-medium"
-            >
-              CreativeIQ Digital Marketing
-            </a>
-          </div>
+          <a
+            href="https://creativeiq.marketing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-600 text-xs tracking-widest uppercase hover:text-white transition-colors duration-300"
+          >
+            Powered by{" "}
+            <span className="font-semibold text-slate-400 hover:text-white">
+              Creative IQ
+            </span>
+          </a>
         </div>
       </div>
     </footer>
