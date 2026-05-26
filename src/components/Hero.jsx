@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useScrollToElement } from "../hooks/useScrollToElement";
-import heroBg from "../assets/hero.jpg";
 import extras1 from "../assets/extras/cake.jpg";
 import extras2 from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
 import extras3 from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
@@ -26,9 +25,10 @@ export default function Hero() {
   return (
     <motion.section
       className="relative w-full h-screen overflow-hidden"
+      id="hero"
       data-section="hero"
       style={{
-        backgroundImage: `url(${heroBg})`,
+        backgroundImage: `url('/hero.jpg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -53,12 +53,24 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-8 lg:pr-12"
           >
-            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
-              San Antonio Catering & Bakery Experts
-            </h2>
-            <h1 className="text-3xl lg:text-4xl font-semibold text-gray-100 mt-4">
-              Professional Wedding & Corporate Catering | Custom Cakes
-            </h1>
+            <div className="flex flex-col">
+              <h1
+                className="text-3xl lg:text-4xl font-semibold text-gray-100 mt-4"
+                style={{ order: 2 }}
+              >
+                Professional Wedding & Corporate Catering | Custom Cakes
+                <span className="sr-only">
+                  {" "}
+                  — Texas Sugar Daddies, San Antonio TX
+                </span>
+              </h1>
+              <h2
+                className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white"
+                style={{ order: 1 }}
+              >
+                San Antonio Catering & Bakery Experts
+              </h2>
+            </div>
             <p className="text-xl text-gray-200 leading-relaxed max-w-lg">
               San Antonio's premier catering company and custom bakery since
               2017. From wedding catering to corporate events, custom cakes to

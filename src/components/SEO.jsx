@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function SEO({
   title = "Texas Sugar Daddies | San Antonio Bakery, Custom Cakes & Catering",
-  description = "San Antonio's premier bakery, custom cake studio & full-service catering company since 2017. Wedding cakes, birthday cakes, corporate catering, event venue up to 150 guests. Call (210) 281-1415.",
+  description = "San Antonio's premier bakery & catering since 2017. Custom cakes, wedding cakes, corporate catering, event venue up to 150 guests. Call (210) 281-1415.",
   keywords = "San Antonio bakery, bakery San Antonio TX, best bakery San Antonio, bakery near me San Antonio, custom cakes San Antonio, custom birthday cakes San Antonio, birthday cake San Antonio, birthday cake delivery San Antonio, wedding cakes San Antonio, wedding cakes San Antonio TX, cake delivery San Antonio, quinceañera cakes San Antonio, anniversary cakes San Antonio, baby shower cakes San Antonio, specialty cakes San Antonio, custom cake shop San Antonio, cupcakes San Antonio, custom cookies San Antonio, sugar cookies San Antonio, desserts San Antonio, baked goods San Antonio, bakery catering San Antonio, catering San Antonio TX, catering company San Antonio, caterer San Antonio TX, wedding catering San Antonio, corporate catering San Antonio, event catering San Antonio, party catering San Antonio, dessert catering San Antonio, catering services San Antonio, catering near me San Antonio, event venue San Antonio, party venue San Antonio TX, event space San Antonio, wedding venue San Antonio TX, venue rental San Antonio TX, private event venue San Antonio, birthday party venue San Antonio, corporate event venue San Antonio, event space rental San Antonio, lunch cafe San Antonio, grab and go cafe San Antonio",
   ogImage = "/og-image.jpg",
   canonical = window.location.origin + window.location.pathname,
@@ -75,7 +75,7 @@ export default function SEO({
       },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:type", content: "business.business" },
+      { property: "og:type", content: "website" },
       { property: "og:image", content: window.location.origin + ogImage },
       {
         property: "og:image:secure_url",

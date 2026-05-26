@@ -69,7 +69,7 @@ function ServiceCard({ title, desc, img, btn, link, index }) {
 
 export default function Services() {
   return (
-    <section className="py-20 bg-white" data-section="services">
+    <section className="py-20 bg-white" id="services" data-section="services">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

@@ -5,19 +5,19 @@ import menuData from "../data/menu.json";
 
 export default function RestaurantMenu() {
   const [activeCategory, setActiveCategory] = useState(
-    menuData.categories[0].id
+    menuData.categories[0].id,
   );
 
   const currentItems =
     menuData.categories.find((cat) => cat.id === activeCategory)?.items || [];
 
   return (
-    <section className="py-20 bg-white" data-section="menu">
+    <section className="py-20 bg-white" id="menu" data-section="menu">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 space-y-3">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             {menuData.title}
-          </h1>
+          </h2>
           <p className="text-base text-gray-600 max-w-4xl mx-auto">
             {menuData.subtitle}
           </p>

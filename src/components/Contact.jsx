@@ -71,7 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 bg-white" data-section="contact">
+    <section className="py-24 bg-white" id="contact" data-section="contact">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-6xl lg:text-5xl font-black text-black-600 text-center mb-20 leading-tight">
           {contactData.title}

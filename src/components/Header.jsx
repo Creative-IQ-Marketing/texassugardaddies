@@ -87,10 +87,11 @@ export default function Header() {
           }}
         >
           {NAV_LINKS.map((link) => (
-            <motion.button
+            <motion.a
               key={link.section}
+              href={`#${link.section}`}
               onClick={(e) => handleNavClick(e, link.section)}
-              className="transition-transform duration-200 bg-none border-none cursor-pointer"
+              className="transition-transform duration-200 bg-none border-none cursor-pointer no-underline text-inherit"
               variants={{
                 hidden: { opacity: 0, y: -20 },
                 visible: { opacity: 1, y: 0 },
@@ -100,7 +101,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               {link.label}
-            </motion.button>
+            </motion.a>
           ))}
         </motion.nav>
 

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Intro() {
   return (
-    <section className="py-24 bg-white" data-section="intro">
+    <section className="py-24 bg-white" id="intro" data-section="intro">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
