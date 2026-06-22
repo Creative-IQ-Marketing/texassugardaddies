@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { satxSchemaCities } from "../data/serviceAreas";
 
 export default function StructuredData() {
   useEffect(() => {
@@ -121,15 +122,8 @@ export default function StructuredData() {
         addressCountry: "US",
       },
       areaServed: [
-        {
-          "@type": "City",
-          name: "San Antonio",
-          "@id": "https://en.wikipedia.org/wiki/San_Antonio",
-        },
-        {
-          "@type": "State",
-          name: "Texas",
-        },
+        ...satxSchemaCities,
+        { "@type": "State", name: "Texas" },
       ],
       sameAs: [
         "https://www.facebook.com/texassugardaddies",
@@ -236,16 +230,7 @@ export default function StructuredData() {
         latitude: 29.4241,
         longitude: -98.4936,
       },
-      areaServed: [
-        {
-          "@type": "City",
-          name: "San Antonio",
-        },
-        {
-          "@type": "State",
-          name: "Texas",
-        },
-      ],
+      areaServed: [...satxSchemaCities, { "@type": "State", name: "Texas" }],
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -381,11 +366,7 @@ export default function StructuredData() {
       },
       description:
         "Professional full-service catering in San Antonio for weddings, corporate events, parties, and special occasions. Custom menus, on-site and off-site catering available.",
-      areaServed: {
-        "@type": "City",
-        name: "San Antonio",
-        "@id": "https://en.wikipedia.org/wiki/San_Antonio",
-      },
+      areaServed: satxSchemaCities,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Catering Services",
