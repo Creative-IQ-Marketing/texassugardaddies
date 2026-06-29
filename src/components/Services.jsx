@@ -5,6 +5,8 @@ import cateringImg from "../assets/extras/imgi_5_68c0e4f632f3399471194aff.jpg";
 import venueImg from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
 import servicesData from "../data/services.json";
 import { useScrollToElement } from "../hooks/useScrollToElement";
+import OptimizedImage from "./ui/OptimizedImage";
+import SectionHeading from "./ui/SectionHeading";
 
 const imageMap = {
   "cake.jpg": cakeImg,
@@ -39,18 +41,19 @@ function ServiceCard({ title, desc, img, btn, link, index }) {
     <div className="group">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
         <div className={`${index % 2 === 1 ? "md:order-2" : ""}`}>
-          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
-            <img
+          <div className="relative h-64 overflow-hidden rounded-2xl bg-gray-100 shadow-lg md:h-80">
+            <OptimizedImage
               src={imageSrc}
               alt={altText}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              wrapperClassName="h-full w-full"
+              className="transition-transform duration-500 group-hover:scale-105"
             />
           </div>
         </div>
 
         <div className={`${index % 2 === 1 ? "md:order-1" : ""}`}>
           <div className="space-y-5">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h3 className="font-display text-2xl font-semibold text-gray-900 md:text-3xl">
               {title}
             </h3>
             <p className="text-gray-600 text-base leading-relaxed">{desc}</p>
@@ -71,15 +74,11 @@ export default function Services() {
   return (
     <section className="py-20 bg-white" id="services" data-section="services">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {servicesData.title}
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {servicesData.subtitle}
-          </p>
-        </div>
+        <SectionHeading
+          title={servicesData.title}
+          description={servicesData.subtitle}
+          className="mb-20"
+        />
 
         <div className="space-y-12">
           {servicesData.services.map((s, index) => (

@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 import contactData from "../data/contact.json";
 import { submitToGHL } from "../services/ghl";
 import { trackEvent } from "../services/analytics";
+import SectionHeading from "./ui/SectionHeading";
+
+const CONTACT_ICONS = {
+  address: MapPin,
+  email: Mail,
+  phone: Phone,
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -71,86 +78,91 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 bg-white" id="contact" data-section="contact">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-6xl lg:text-5xl font-black text-black-600 text-center mb-20 leading-tight">
-          {contactData.title}
-        </h2>
+    <section
+      className="bg-slate-50 py-24 md:py-28"
+      id="contact"
+      data-section="contact"
+    >
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading
+          eyebrow="Get in touch"
+          title={contactData.title}
+          description={contactData.description}
+          className="mb-16"
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          <div className="flex flex-col justify-center">
-            <h3 className="text-5xl lg:text-5xl font-bold text-black mb-8">
-              {contactData.heading}
-            </h3>
-            <p className="text-2xl text-slate-600 font-semibold mb-16 leading-relaxed">
-              {contactData.description}
-            </p>
-
-            <div className="space-y-12">
-              {contactData.contacts.map((contact, index) => (
-                <div key={index} className="flex items-start gap-5 group">
-                  <div className="shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-slate-600 transition-colors duration-300">
-                    {contact.type === "address" && (
-                      <MapPin className="text-black group-hover:text-white w-5 h-5" />
-                    )}
-                    {contact.type === "email" && (
-                      <Mail className="text-black group-hover:text-white w-5 h-5" />
-                    )}
-                    {contact.type === "phone" && (
-                      <Phone className="text-black group-hover:text-white w-5 h-5" />
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-red-500 font-bold text-lg mb-1">
-                      {contact.label}
-                    </p>
-                    {contact.href ? (
-                      <a
-                        href={contact.href}
-                        className="text-black  text-lg font-medium"
-                      >
-                        {contact.value}
-                      </a>
-                    ) : (
-                      <p className="text-gray-700 text-lg">{contact.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-8">
+            <div>
+              <h3 className="font-display text-2xl font-semibold text-slate-900 md:text-3xl">
+                {contactData.heading}
+              </h3>
+              <p className="mt-3 text-base italic text-[var(--brand-red)]">
+                {contactData.tagline}
+              </p>
             </div>
 
-            <p className="text-3xl font-black text-red-500 mt-16">
-              {contactData.tagline}
-            </p>
+            <div className="space-y-4">
+              {contactData.contacts.map((contact) => {
+                const Icon = CONTACT_ICONS[contact.type];
+                return (
+                  <div
+                    key={contact.type}
+                    className="group flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+                  >
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-700 transition-colors group-hover:bg-[var(--brand-blue)] group-hover:text-white">
+                      <Icon size={18} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                        {contact.label}
+                      </p>
+                      {contact.href ? (
+                        <a
+                          href={contact.href}
+                          className="mt-1 block text-base font-medium text-slate-900 transition-colors hover:text-[var(--brand-blue)]"
+                        >
+                          {contact.value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-base font-medium text-slate-900">
+                          {contact.value}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="bg-gray-100 rounded-3xl p-12 lg:p-16">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm md:p-10">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 transition-colors duration-300 text-base font-medium"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-3.5 text-base text-slate-900 transition-colors placeholder:text-slate-400 focus:border-[var(--brand-blue)] focus:bg-white focus:outline-none"
               />
 
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email*"
+                placeholder="Your Email *"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 transition-colors duration-300 text-base font-medium"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-3.5 text-base text-slate-900 transition-colors placeholder:text-slate-400 focus:border-[var(--brand-blue)] focus:bg-white focus:outline-none"
               />
 
               <input
                 type="tel"
                 name="phone"
-                placeholder="Your Phone*"
+                placeholder="Your Phone *"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 transition-colors duration-300 text-base font-medium"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-3.5 text-base text-slate-900 transition-colors placeholder:text-slate-400 focus:border-[var(--brand-blue)] focus:bg-white focus:outline-none"
               />
 
               <textarea
@@ -158,29 +170,27 @@ export default function Contact() {
                 placeholder="Tell us about your order or special request"
                 value={formData.message}
                 onChange={handleChange}
-                rows="6"
-                className="w-full px-6 py-4 bg-white border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 transition-colors duration-300 resize-none text-base font-medium"
-              ></textarea>
+                rows="5"
+                className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50/50 px-5 py-3.5 text-base text-slate-900 transition-colors placeholder:text-slate-400 focus:border-[var(--brand-blue)] focus:bg-white focus:outline-none"
+              />
 
-              <label className="flex items-start gap-3 text-gray-700 text-sm cursor-pointer group">
+              <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-slate-600">
                 <input
                   type="checkbox"
                   name="consent"
                   checked={formData.consent}
                   onChange={handleChange}
-                  className="w-6 h-6 accent-blue-600 cursor-pointer mt-1 shrink-0"
+                  className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-[var(--brand-blue)]"
                 />
-                <span className="group-hover:text-gray-900 transition-colors duration-300">
-                  {contactData.form.consentText}
-                </span>
+                <span>{contactData.form.consentText}</span>
               </label>
 
               {submitStatus && (
                 <div
-                  className={`p-4 rounded-xl text-center font-semibold ${
+                  className={`rounded-xl px-4 py-3 text-center text-sm font-medium ${
                     submitStatus.type === "success"
-                      ? "bg-green-100 text-green-800"
-                      : "bg-red-100 text-red-800"
+                      ? "bg-emerald-50 text-emerald-800"
+                      : "bg-red-50 text-red-800"
                   }`}
                 >
                   {submitStatus.message}
@@ -190,9 +200,15 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-5 bg-blue-100 text-gray-700 font-bold rounded-xl hover:bg-blue-200 active:scale-95 transition-all duration-200 text-lg tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--brand-blue)] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-blue-600 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : contactData.form.submitText}
+                {!isSubmitting && (
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform group-hover:translate-x-0.5"
+                  />
+                )}
               </button>
             </form>
           </div>

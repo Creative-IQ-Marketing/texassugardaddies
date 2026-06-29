@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaUtensils } from "react-icons/fa";
 import { useScrollToElement } from "../hooks/useScrollToElement";
+import SectionHeading from "./ui/SectionHeading";
 
 const SCHEDULES = [
   {
@@ -143,15 +144,12 @@ export default function Schedules() {
   return (
     <section className="py-16 bg-linear-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            Ongoing Schedules
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Current service schedules — additional schedules will appear here as
-            they become available.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Hours & availability"
+          title="Ongoing Schedules"
+          description="Current service schedules — additional schedules will appear here as they become available."
+          className="mb-12"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {SCHEDULES.map((s, i) => (

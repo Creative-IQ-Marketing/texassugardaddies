@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Truck, Utensils, Plus, Phone } from "lucide-react";
 import menuData from "../data/menu.json";
+import SectionHeading from "./ui/SectionHeading";
 
 export default function RestaurantMenu() {
   const [activeCategory, setActiveCategory] = useState(
@@ -14,14 +15,11 @@ export default function RestaurantMenu() {
   return (
     <section className="py-20 bg-white" id="menu" data-section="menu">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12 space-y-3">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            {menuData.title}
-          </h2>
-          <p className="text-base text-gray-600 max-w-4xl mx-auto">
-            {menuData.subtitle}
-          </p>
-        </div>
+        <SectionHeading
+          title={menuData.title}
+          description={menuData.subtitle}
+          className="mb-12"
+        />
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {menuData.categories.map((category) => (

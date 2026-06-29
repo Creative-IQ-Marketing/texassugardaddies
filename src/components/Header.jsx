@@ -1,8 +1,5 @@
-import logo from "../assets/logo.png";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import logo from "../assets/logo_new_tss.png";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { useScrollToElement } from "../hooks/useScrollToElement";
 
 const NAV_LINKS = [
@@ -26,16 +23,7 @@ const SOCIAL_LINKS = [
 ];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollToElement } = useScrollToElement();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleNavClick = (e, section) => {
     e.preventDefault();
@@ -43,107 +31,57 @@ export default function Header() {
   };
 
   return (
-    <motion.header
-      className={`w-full backdrop-blur-sm shadow-md sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 py-1" : "bg-white/30 py-4"
-      }`}
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <div className="w-full max-w-full mx-auto flex items-center justify-between px-6">
-        <motion.div
-          className="flex items-center"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+      <div className="pointer-events-auto mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-slate-200 bg-white px-3 py-2 shadow-lg shadow-slate-900/10 md:gap-4 md:px-5 md:py-2.5">
+        <button
+          onClick={(e) => handleNavClick(e, "hero")}
+          className="shrink-0 cursor-pointer border-none bg-transparent p-0"
         >
-          <button
-            onClick={(e) => handleNavClick(e, "hero")}
-            className="block -ml-2 bg-none border-none cursor-pointer"
-          >
-            <motion.img
-              src={logo}
-              alt="San Antonio Bakery and Catering Company Logo - Custom Cakes and Event Services"
-              className="h-16 w-16 md:h-24 md:w-24 object-contain"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-          </button>
-        </motion.div>
+          <img
+            src={logo}
+            alt="San Antonio Bakery and Catering Company Logo - Custom Cakes and Event Services"
+            className="h-11 w-auto object-contain md:h-14"
+            decoding="async"
+          />
+        </button>
 
-        <motion.nav
-          className="hidden lg:flex items-center gap-10 text-gray-800 tracking-wide"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.3,
-              },
-            },
-          }}
-        >
+        <nav className="hidden items-center gap-6 lg:flex lg:gap-8">
           {NAV_LINKS.map((link) => (
-            <motion.a
+            <a
               key={link.section}
               href={`#${link.section}`}
               onClick={(e) => handleNavClick(e, link.section)}
-              className="transition-transform duration-200 bg-none border-none cursor-pointer no-underline text-inherit"
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              className="text-lg font-medium text-slate-700 transition-colors hover:scale-105 hover:text-slate-900"
             >
               {link.label}
-            </motion.a>
+            </a>
           ))}
-        </motion.nav>
+        </nav>
 
-        <motion.div
-          className="flex items-center gap-4"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-        >
-          <div className="hidden md:flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          <div className="hidden items-center gap-0.5 md:flex">
             {SOCIAL_LINKS.map((link) => (
-              <motion.a
+              <a
                 key={link.name}
                 href={link.href}
                 aria-label={link.name}
-                className="p-2 rounded-full text-gray-700 hover:text-white hover:bg-gray-800 transition"
+                className="rounded-full p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
               >
                 <link.Icon size={14} />
-              </motion.a>
+              </a>
             ))}
           </div>
 
-          <motion.button
+          <button
             onClick={(e) => handleNavClick(e, "contact")}
-            className="px-5 py-2 rounded-full font-medium shadow-md border-none cursor-pointer"
-            style={{ backgroundColor: "var(--brand-blue)", color: "white" }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-              y: -3,
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400 }}
+            className="cursor-pointer rounded-full border-none bg-[var(--brand-blue)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-600 md:px-5 md:py-2.5"
           >
             Get Your Quote
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
       </div>
-    </motion.header>
+    </header>
   );
 }

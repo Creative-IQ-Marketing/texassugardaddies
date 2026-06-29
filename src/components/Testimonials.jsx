@@ -1,5 +1,6 @@
 import React from "react";
 import testimonialsData from "../data/testimonials.json";
+import SectionHeading from "./ui/SectionHeading";
 
 function TestimonialCard({ rating, quote, name, role }) {
   return (
@@ -28,15 +29,11 @@ export default function Testimonials() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            {testimonialsData.title}
-          </h2>
-          <div className="w-24 h-1.5 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {testimonialsData.subtitle}
-          </p>
-        </div>
+        <SectionHeading
+          title={testimonialsData.title}
+          description={testimonialsData.subtitle}
+          className="mb-20"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24">
           {testimonialsData.testimonials.map((testimonial) => (
@@ -48,7 +45,7 @@ export default function Testimonials() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {testimonialsData.stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <p className="text-3xl font-black text-black mb-3 group-hover:scale-110 transition-transform duration-300">
+                <p className="font-display text-3xl font-semibold text-black mb-3 group-hover:scale-105 transition-transform duration-300">
                   {stat.number}
                 </p>
                 <p className="text-gray-600 font-semibold text-base tracking-wide">
