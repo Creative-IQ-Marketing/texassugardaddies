@@ -5,7 +5,6 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  FaHeart,
 } from "react-icons/fa";
 import { useScrollToElement } from "../hooks/useScrollToElement";
 import contactData from "../data/contact.json";
