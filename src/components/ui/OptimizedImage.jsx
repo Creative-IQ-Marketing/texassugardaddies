@@ -6,6 +6,7 @@ export default function OptimizedImage({
   className = "",
   wrapperClassName = "",
   eager = false,
+  priority,
   aspectRatio,
   width,
   height,
@@ -15,6 +16,7 @@ export default function OptimizedImage({
   const [loaded, setLoaded] = useState(false);
   const skeletonBg =
     tone === "dark" ? "bg-slate-800/80" : "bg-slate-200/70";
+  const fetchPriority = priority ?? (eager ? "high" : "low");
 
   return (
     <div
@@ -34,7 +36,7 @@ export default function OptimizedImage({
         height={height}
         loading={eager ? "eager" : "lazy"}
         decoding="async"
-        fetchPriority={eager ? "high" : "auto"}
+        fetchPriority={fetchPriority}
         onLoad={() => setLoaded(true)}
         className={`h-full w-full transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"

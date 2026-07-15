@@ -1,8 +1,8 @@
 import React from "react";
-import cakeImg from "../assets/extras/cake.jpg";
-import cookiesImg from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
-import cateringImg from "../assets/extras/imgi_5_68c0e4f632f3399471194aff.jpg";
-import venueImg from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
+import cakeImg from "../assets/extras/optimized/cake.webp";
+import cookiesImg from "../assets/extras/optimized/imgi_4_68c0e4f744a6632cc3db5706.webp";
+import cateringImg from "../assets/extras/optimized/imgi_5_68c0e4f632f3399471194aff.webp";
+import venueImg from "../assets/extras/optimized/imgi_6_68c0e4f6fc367038f91acf8a.webp";
 import servicesData from "../data/services.json";
 import { useScrollToElement } from "../hooks/useScrollToElement";
 import OptimizedImage from "./ui/OptimizedImage";

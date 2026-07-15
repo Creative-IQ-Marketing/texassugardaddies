@@ -1,60 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      window.addEventListener("load", function () {
-        (function (c, l, a, r, i, t, y) {
-          c[a] =
-            c[a] ||
-            function () {
-              (c[a].q = c[a].q || []).push(arguments);
-            };
-          t = l.createElement(r);
-          t.async = 1;
-          t.src = "https://www.clarity.ms/tag/" + i;
-          y = l.getElementsByTagName(r)[0];
-          y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "wofer6o9gr");
-      });
-    </script>
-    <!-- Google Tag Manager (GTM) - MUST be first in head -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GT-NBQPLNB5");
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Analytics 4 (Direct) - FOR TESTING ONLY -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-HQWELS4TBJ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-HQWELS4TBJ");
-    </script>
-    <script
-      src="https://analytics.ahrefs.com/analytics.js"
-      data-key="ZRudIC0hZ4swGpEBaZvkKw"
-      async
-    ></script>
-
     <meta charset="UTF-8" />
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.svg" />
-    <link rel="apple-touch-icon" href="/src/assets/logo.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -188,13 +138,83 @@
     />
     <link rel="alternate" hreflang="en" href="https://texassugardaddies.com" />
 
-    <!-- Preconnect & DNS Prefetch -->
+    <!-- Preconnect & LCP preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://services.leadconnectorhq.com" />
-    <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="/hero/hero-960.webp"
+      type="image/webp"
+      imagesrcset="/hero/hero-640.webp 640w, /hero/hero-960.webp 960w, /hero/hero-1200.webp 1200w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+
+    <!-- Google Fonts — non-render-blocking (moved out of CSS @import) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+      />
+    </noscript>
 
     <title>Texas Sugar Daddies - San Antonio Bakery, Cafe & Catering</title>
+
+    <!-- Clarity, GTM, GA4, Ahrefs — deferred until window load -->
+    <script>
+      window.addEventListener("load", function () {
+        (function (c, l, a, r, i, t, y) {
+          c[a] =
+            c[a] ||
+            function () {
+              (c[a].q = c[a].q || []).push(arguments);
+            };
+          t = l.createElement(r);
+          t.async = 1;
+          t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "wofer6o9gr");
+
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GT-NBQPLNB5");
+
+        var ga = document.createElement("script");
+        ga.async = true;
+        ga.src = "https://www.googletagmanager.com/gtag/js?id=G-HQWELS4TBJ";
+        document.head.appendChild(ga);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", "G-HQWELS4TBJ");
+
+        var ahrefs = document.createElement("script");
+        ahrefs.src = "https://analytics.ahrefs.com/analytics.js";
+        ahrefs.setAttribute("data-key", "ZRudIC0hZ4swGpEBaZvkKw");
+        ahrefs.async = true;
+        document.head.appendChild(ahrefs);
+      });
+    </script>
   </head>
   <body>
     <noscript>

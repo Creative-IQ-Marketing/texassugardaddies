@@ -1,7 +1,7 @@
 import { Utensils, Star, Clock } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import daddies from "../assets/daddies.jpg";
+import daddies from "../assets/daddies.webp";
 import OptimizedImage from "./ui/OptimizedImage";
 import SectionHeading from "./ui/SectionHeading";
 

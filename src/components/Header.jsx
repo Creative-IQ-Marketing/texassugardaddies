@@ -1,4 +1,4 @@
-import logo from "../assets/logo_new_tss.png";
+import logo from "../assets/logo_new_tss.webp";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { useScrollToElement } from "../hooks/useScrollToElement";
 

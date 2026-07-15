@@ -1,12 +1,14 @@
-import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import { useScrollToElement } from "../hooks/useScrollToElement";
 import OptimizedImage from "./ui/OptimizedImage";
-import extras1 from "../assets/extras/cake.jpg";
-import extras2 from "../assets/extras/imgi_4_68c0e4f744a6632cc3db5706.jpg";
-import extras3 from "../assets/extras/imgi_6_68c0e4f6fc367038f91acf8a.jpg";
+import extras1 from "../assets/extras/optimized/cake.webp";
+import extras2 from "../assets/extras/optimized/imgi_4_68c0e4f744a6632cc3db5706.webp";
+import extras3 from "../assets/extras/optimized/imgi_6_68c0e4f6fc367038f91acf8a.webp";
+
+const HERO_WEBP_SRCSET =
+  "/hero/hero-640.webp 640w, /hero/hero-960.webp 960w, /hero/hero-1200.webp 1200w";
 
 const IMAGES = [
   {
@@ -34,7 +36,6 @@ const STATS = [
 
 export default function Hero() {
   const { scrollToElement } = useScrollToElement();
-  const [bgReady, setBgReady] = useState(false);
 
   const handleScroll = (e, section) => {
     e.preventDefault();
@@ -49,21 +50,25 @@ export default function Hero() {
     >
       {/* Background — meat/catering photo anchored left; right side darkened */}
       <div className="absolute inset-0">
-        {!bgReady && (
-          <div className="absolute inset-0 image-skeleton" aria-hidden="true" />
-        )}
-        <img
-          src="/hero.jpg"
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          fetchPriority="high"
-          decoding="sync"
-          onLoad={() => setBgReady(true)}
-          className={`hero-bg absolute inset-0 h-full w-full object-cover object-left transition-opacity duration-700 ${
-            bgReady ? "opacity-100" : "opacity-0"
-          }`}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={HERO_WEBP_SRCSET}
+            sizes="100vw"
+          />
+          <img
+            src="/hero.jpg"
+            alt=""
+            aria-hidden="true"
+            width="1200"
+            height="800"
+            sizes="100vw"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+            className="hero-bg absolute inset-0 h-full w-full object-cover object-left opacity-100"
+          />
+        </picture>
         <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/55 to-slate-950/92" />
         <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-black/25" />
       </div>
@@ -156,7 +161,7 @@ export default function Hero() {
           >
             <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/50 p-3 shadow-2xl shadow-black/40 backdrop-blur-sm">
               <div className="grid h-[30rem] grid-cols-2 grid-rows-2 gap-3">
-                {IMAGES.map((image, index) => (
+                {IMAGES.map((image) => (
                   <div
                     key={image.alt}
                     className={`relative min-h-0 overflow-hidden rounded-[1.25rem] ${image.className}`}
@@ -164,7 +169,8 @@ export default function Hero() {
                     <OptimizedImage
                       src={image.src}
                       alt={image.alt}
-                      eager={index === 0}
+                      eager={false}
+                      priority="low"
                       tone="dark"
                       wrapperClassName="absolute inset-0 h-full w-full overflow-hidden rounded-[1.25rem]"
                       className="h-full w-full rounded-[1.25rem]"
