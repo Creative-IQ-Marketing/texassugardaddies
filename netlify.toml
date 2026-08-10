@@ -3,12 +3,6 @@
   command = "npm run build"
   environment = { CI = "true" }
 
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [[headers]]
   for = "/*"
   [headers.values]

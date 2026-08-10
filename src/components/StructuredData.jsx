@@ -102,7 +102,7 @@ export default function StructuredData() {
       alternateName: "San Antonio Bakery & Catering Services",
       legalName: "Texas Sugar Daddies LLC",
       url: "https://texassugardaddies.com",
-      logo: "https://texassugardaddies.com/logo.png",
+      logo: "https://texassugardaddies.com/logo.webp",
       image: "https://texassugardaddies.com/og-image.jpg",
       description:
         "Professional San Antonio catering company and bakery specializing in wedding catering, corporate events, custom cakes, cupcakes, cookies, desserts, lunch cafe, and full-service event venue since 2017. Serving San Antonio, Texas and surrounding areas with expert catering services and custom bakery creations.",
@@ -206,7 +206,7 @@ export default function StructuredData() {
         "San Antonio Professional Catering Company & Custom Bakery",
       image: [
         "https://texassugardaddies.com/og-image.jpg",
-        "https://texassugardaddies.com/hero.jpg",
+        "https://texassugardaddies.com/hero/hero-960.webp",
         "https://texassugardaddies.com/og-image.jpg",
       ],
       description:
