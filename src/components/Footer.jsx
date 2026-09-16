@@ -160,31 +160,42 @@ export default function Footer() {
             © {new Date().getFullYear()} Texas Sugar Daddies. All rights
             reserved.
           </p>
-          <a
-            href="https://creativeiq.marketing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1 text-xs tracking-widest uppercase text-slate-600 transition-colors duration-300 hover:text-white"
-          >
-            Powered by{" "}
-            <span className="inline-flex items-center gap-0.5 font-semibold text-slate-400 group-hover:text-white">
-              Creative IQ
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-3 w-3 -translate-y-px transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              >
-                <path d="M7 17L17 7" />
-                <path d="M7 7h10v10" />
-              </svg>
-            </span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="https://creativeiqmarketing.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-xs tracking-widest uppercase text-slate-600 transition-colors duration-300 hover:text-white"
+            >
+              Powered by{" "}
+              <span className="inline-flex items-center gap-0.5 font-semibold text-slate-400 group-hover:text-white">
+                Creative IQ
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-3 w-3 -translate-y-px transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </span>
+            </a>
+            <a
+              href="https://creativeiqmarketing.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Creative IQ Marketing"
+              className="inline-flex items-center rounded-full bg-blue-600 px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-white transition-colors hover:bg-blue-500"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       </div>
     </footer>
